@@ -23,4 +23,8 @@ class AppColorSwatch extends ColorSwatch<int> {
 
   /// The default shade.
   Color get shade600 => this[600]!;
+
+  factory AppColorSwatch.fromMap(Map<int, Color> map) {
+    return AppColorSwatch(map[600]!, map,);
+  }
 }
