@@ -22,6 +22,22 @@ class TownSquareApp extends StatelessWidget {
             textTheme: TextTheme(
               bodyMedium: appTheme.textStyles.body1,
             ),
+            filledButtonTheme: FilledButtonThemeData(
+              style: FilledButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                backgroundColor: appTheme.colors.black,
+                foregroundColor: appTheme.colors.white,
+              ),
+            ),
+            cardTheme: CardTheme(
+              color: appTheme.colors.white,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
           ),
           routeInformationParser: appRouter.routeInformationParser,
           routeInformationProvider: appRouter.routeInformationProvider,
