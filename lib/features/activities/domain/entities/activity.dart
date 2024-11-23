@@ -7,14 +7,21 @@ part 'activity.freezed.dart';
 
 @freezed
 class Activity with _$Activity {
+  const Activity._();
+
   factory Activity({
     required String id,
     required DateTime startDate,
     required DateTime endDate,
     required String name,
     required Location location,
+    required int maxParticipants,
     @Default([]) List<Participant> participants,
     @Default([]) List<Tags> tags,
     @Default(0) double price,
   }) = _Activity;
+
+  Duration get duration {
+    return endDate.difference(startDate);
+  }
 }

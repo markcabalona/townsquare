@@ -21,6 +21,7 @@ mixin _$Activity {
   DateTime get endDate => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   Location get location => throw _privateConstructorUsedError;
+  int get maxParticipants => throw _privateConstructorUsedError;
   List<Participant> get participants => throw _privateConstructorUsedError;
   List<Tags> get tags => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ abstract class $ActivityCopyWith<$Res> {
       DateTime endDate,
       String name,
       Location location,
+      int maxParticipants,
       List<Participant> participants,
       List<Tags> tags,
       double price});
@@ -70,6 +72,7 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
     Object? endDate = null,
     Object? name = null,
     Object? location = null,
+    Object? maxParticipants = null,
     Object? participants = null,
     Object? tags = null,
     Object? price = null,
@@ -95,6 +98,10 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as Location,
+      maxParticipants: null == maxParticipants
+          ? _value.maxParticipants
+          : maxParticipants // ignore: cast_nullable_to_non_nullable
+              as int,
       participants: null == participants
           ? _value.participants
           : participants // ignore: cast_nullable_to_non_nullable
@@ -135,6 +142,7 @@ abstract class _$$ActivityImplCopyWith<$Res>
       DateTime endDate,
       String name,
       Location location,
+      int maxParticipants,
       List<Participant> participants,
       List<Tags> tags,
       double price});
@@ -161,6 +169,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
     Object? endDate = null,
     Object? name = null,
     Object? location = null,
+    Object? maxParticipants = null,
     Object? participants = null,
     Object? tags = null,
     Object? price = null,
@@ -186,6 +195,10 @@ class __$$ActivityImplCopyWithImpl<$Res>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as Location,
+      maxParticipants: null == maxParticipants
+          ? _value.maxParticipants
+          : maxParticipants // ignore: cast_nullable_to_non_nullable
+              as int,
       participants: null == participants
           ? _value._participants
           : participants // ignore: cast_nullable_to_non_nullable
@@ -204,18 +217,20 @@ class __$$ActivityImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ActivityImpl implements _Activity {
+class _$ActivityImpl extends _Activity {
   _$ActivityImpl(
       {required this.id,
       required this.startDate,
       required this.endDate,
       required this.name,
       required this.location,
+      required this.maxParticipants,
       final List<Participant> participants = const [],
       final List<Tags> tags = const [],
       this.price = 0})
       : _participants = participants,
-        _tags = tags;
+        _tags = tags,
+        super._();
 
   @override
   final String id;
@@ -227,6 +242,8 @@ class _$ActivityImpl implements _Activity {
   final String name;
   @override
   final Location location;
+  @override
+  final int maxParticipants;
   final List<Participant> _participants;
   @override
   @JsonKey()
@@ -251,7 +268,7 @@ class _$ActivityImpl implements _Activity {
 
   @override
   String toString() {
-    return 'Activity(id: $id, startDate: $startDate, endDate: $endDate, name: $name, location: $location, participants: $participants, tags: $tags, price: $price)';
+    return 'Activity(id: $id, startDate: $startDate, endDate: $endDate, name: $name, location: $location, maxParticipants: $maxParticipants, participants: $participants, tags: $tags, price: $price)';
   }
 
   @override
@@ -266,6 +283,8 @@ class _$ActivityImpl implements _Activity {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.location, location) ||
                 other.location == location) &&
+            (identical(other.maxParticipants, maxParticipants) ||
+                other.maxParticipants == maxParticipants) &&
             const DeepCollectionEquality()
                 .equals(other._participants, _participants) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
@@ -280,6 +299,7 @@ class _$ActivityImpl implements _Activity {
       endDate,
       name,
       location,
+      maxParticipants,
       const DeepCollectionEquality().hash(_participants),
       const DeepCollectionEquality().hash(_tags),
       price);
@@ -293,16 +313,18 @@ class _$ActivityImpl implements _Activity {
       __$$ActivityImplCopyWithImpl<_$ActivityImpl>(this, _$identity);
 }
 
-abstract class _Activity implements Activity {
+abstract class _Activity extends Activity {
   factory _Activity(
       {required final String id,
       required final DateTime startDate,
       required final DateTime endDate,
       required final String name,
       required final Location location,
+      required final int maxParticipants,
       final List<Participant> participants,
       final List<Tags> tags,
       final double price}) = _$ActivityImpl;
+  _Activity._() : super._();
 
   @override
   String get id;
@@ -314,6 +336,8 @@ abstract class _Activity implements Activity {
   String get name;
   @override
   Location get location;
+  @override
+  int get maxParticipants;
   @override
   List<Participant> get participants;
   @override
