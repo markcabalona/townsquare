@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-enum Tags { light, medium, high, veryHigh, workSpace, childCare }
+import 'package:townsquare/core/enums/tags.dart';
 
 class TagColorSwatch extends ColorSwatch<Tags> {
   TagColorSwatch(

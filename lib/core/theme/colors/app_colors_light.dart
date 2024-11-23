@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:townsquare/core/enums/tags.dart';
 import 'package:townsquare/core/theme/colors/app_color_swatch.dart';
 import 'package:townsquare/core/theme/colors/app_colors.dart';
 import 'package:townsquare/core/theme/colors/tags_color_swatch.dart';
