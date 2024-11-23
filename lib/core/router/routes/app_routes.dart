@@ -1,7 +1,7 @@
 enum AppRoute {
-  initial(
-    name: 'initial',
-    path: '/',
+  activities(
+    name: 'activities',
+    path: '/activities',
   );
 
   final String name;
