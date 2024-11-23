@@ -7,7 +7,7 @@ class AppColorSwatch extends ColorSwatch<int> {
   ) : super(primary.value, swatch);
 
   /// The lightest shade.
-  Color get shade100 => this[10]!;
+  Color get shade100 => this[100]!;
 
   /// The second lightest shade.
   Color get shade200 => this[200]!;

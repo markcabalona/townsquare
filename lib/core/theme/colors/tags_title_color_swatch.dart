@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:townsquare/core/enums/tags.dart';
 
-class TagColorSwatch extends ColorSwatch<Tags> {
-  TagColorSwatch(
+class TagTitleColorSwatch extends ColorSwatch<Tags> {
+  TagTitleColorSwatch(
     Color primary,
     Map<Tags, Color> swatch,
   ) : super(primary.value, swatch);
@@ -25,8 +25,8 @@ class TagColorSwatch extends ColorSwatch<Tags> {
   /// The default shade.
   Color get childCare => this[Tags.childCare]!;
 
-  factory TagColorSwatch.fromMap(Map<Tags, Color> map) {
-    return TagColorSwatch(
+  factory TagTitleColorSwatch.fromMap(Map<Tags, Color> map) {
+    return TagTitleColorSwatch(
       map[Tags.light]!,
       map,
     );

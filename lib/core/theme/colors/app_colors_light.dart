@@ -1,8 +1,10 @@
 import 'dart:ui';
 
+import 'package:townsquare/core/enums/tags.dart';
 import 'package:townsquare/core/theme/colors/app_color_swatch.dart';
 import 'package:townsquare/core/theme/colors/app_colors.dart';
 import 'package:townsquare/core/theme/colors/tags_color_swatch.dart';
+import 'package:townsquare/core/theme/colors/tags_title_color_swatch.dart';
 
 class AppColorsLight implements AppColors {
   @override
@@ -59,5 +61,15 @@ class AppColorsLight implements AppColors {
         Tags.veryHigh: Color(0xFFFFE0E4),
         Tags.workSpace: Color(0xFF989AEA),
         Tags.childCare: Color(0xFFD8F7DF),
+      });
+
+  @override
+  TagTitleColorSwatch get tagsTitle => TagTitleColorSwatch.fromMap(const {
+        Tags.light: Color(0xFF65B5DB),
+        Tags.medium: Color(0xFFC9A4F2),
+        Tags.high: Color(0xFFDC974F),
+        Tags.veryHigh: Color(0xFFD98792),
+        Tags.workSpace: Color(0xffFBF4FF),
+        Tags.childCare: Color(0xFF8AB58A),
       });
 }
