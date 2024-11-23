@@ -1,12 +1,13 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:townsquare/core/theme/colors/app_color_swatch.dart';
 
 abstract class AppColors {
-  Color get primary;
-  Color get neutral;
+  AppColorSwatch get primary;
+  AppColorSwatch get neutral;
   Color get black;
   Color get white;
-  Color get secondary;
-  Color get tertiary;
+  AppColorSwatch get secondary;
+  AppColorSwatch get tertiary;
   Color get tagLight;
   Color get tagMedium;
   Color get tagHigh;
