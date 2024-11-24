@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:townsquare/features/activities/domain/entities/activity.dart';
 import 'package:townsquare/features/activities/domain/entities/activity_search_params.dart';
@@ -20,6 +19,6 @@ class ActivitiesState with _$ActivitiesState {
       'Calm',
     ])
     List<String> categories,
-    @Default(ActivitySearchParams()) searchParams,
+    @Default(ActivitySearchParams()) ActivitySearchParams searchParams,
   }) = _ActivitiesState;
 }

@@ -20,7 +20,7 @@ mixin _$ActivitiesState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Activity> get activities => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
-  dynamic get searchParams => throw _privateConstructorUsedError;
+  ActivitySearchParams get searchParams => throw _privateConstructorUsedError;
 
   /// Create a copy of ActivitiesState
   /// with the given fields replaced by the non-null parameter values.
@@ -40,7 +40,9 @@ abstract class $ActivitiesStateCopyWith<$Res> {
       bool isLoading,
       List<Activity> activities,
       List<String> categories,
-      dynamic searchParams});
+      ActivitySearchParams searchParams});
+
+  $ActivitySearchParamsCopyWith<$Res> get searchParams;
 }
 
 /// @nodoc
@@ -62,7 +64,7 @@ class _$ActivitiesStateCopyWithImpl<$Res, $Val extends ActivitiesState>
     Object? isLoading = null,
     Object? activities = null,
     Object? categories = null,
-    Object? searchParams = freezed,
+    Object? searchParams = null,
   }) {
     return _then(_value.copyWith(
       isInitialLoad: null == isInitialLoad
@@ -81,11 +83,21 @@ class _$ActivitiesStateCopyWithImpl<$Res, $Val extends ActivitiesState>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      searchParams: freezed == searchParams
+      searchParams: null == searchParams
           ? _value.searchParams
           : searchParams // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ActivitySearchParams,
     ) as $Val);
+  }
+
+  /// Create a copy of ActivitiesState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ActivitySearchParamsCopyWith<$Res> get searchParams {
+    return $ActivitySearchParamsCopyWith<$Res>(_value.searchParams, (value) {
+      return _then(_value.copyWith(searchParams: value) as $Val);
+    });
   }
 }
 
@@ -102,7 +114,10 @@ abstract class _$$ActivitiesStateImplCopyWith<$Res>
       bool isLoading,
       List<Activity> activities,
       List<String> categories,
-      dynamic searchParams});
+      ActivitySearchParams searchParams});
+
+  @override
+  $ActivitySearchParamsCopyWith<$Res> get searchParams;
 }
 
 /// @nodoc
@@ -122,7 +137,7 @@ class __$$ActivitiesStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? activities = null,
     Object? categories = null,
-    Object? searchParams = freezed,
+    Object? searchParams = null,
   }) {
     return _then(_$ActivitiesStateImpl(
       isInitialLoad: null == isInitialLoad
@@ -141,8 +156,10 @@ class __$$ActivitiesStateImplCopyWithImpl<$Res>
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      searchParams:
-          freezed == searchParams ? _value.searchParams! : searchParams,
+      searchParams: null == searchParams
+          ? _value.searchParams
+          : searchParams // ignore: cast_nullable_to_non_nullable
+              as ActivitySearchParams,
     ));
   }
 }
@@ -192,7 +209,7 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
 
   @override
   @JsonKey()
-  final dynamic searchParams;
+  final ActivitySearchParams searchParams;
 
   @override
   String toString() {
@@ -212,8 +229,8 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
                 .equals(other._activities, _activities) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
-            const DeepCollectionEquality()
-                .equals(other.searchParams, searchParams));
+            (identical(other.searchParams, searchParams) ||
+                other.searchParams == searchParams));
   }
 
   @override
@@ -223,7 +240,7 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
       isLoading,
       const DeepCollectionEquality().hash(_activities),
       const DeepCollectionEquality().hash(_categories),
-      const DeepCollectionEquality().hash(searchParams));
+      searchParams);
 
   /// Create a copy of ActivitiesState
   /// with the given fields replaced by the non-null parameter values.
@@ -241,7 +258,7 @@ abstract class _ActivitiesState implements ActivitiesState {
       final bool isLoading,
       final List<Activity> activities,
       final List<String> categories,
-      final dynamic searchParams}) = _$ActivitiesStateImpl;
+      final ActivitySearchParams searchParams}) = _$ActivitiesStateImpl;
 
   @override
   bool get isInitialLoad;
@@ -252,7 +269,7 @@ abstract class _ActivitiesState implements ActivitiesState {
   @override
   List<String> get categories;
   @override
-  dynamic get searchParams;
+  ActivitySearchParams get searchParams;
 
   /// Create a copy of ActivitiesState
   /// with the given fields replaced by the non-null parameter values.
