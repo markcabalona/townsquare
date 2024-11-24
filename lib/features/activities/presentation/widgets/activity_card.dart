@@ -16,44 +16,41 @@ class ActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTheme = AppTheme.of(context);
-    return SizedBox(
-      width: 554,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 12.0,
-            horizontal: 32,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: _ActivityDetails(
-                  activity: activity,
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 12.0,
+          horizontal: 32,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: _ActivityDetails(
+                activity: activity,
+              ),
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 20),
+                Text(
+                  '${activity.price.toInt()}€',
+                  style: appTheme.textStyles.subtitle2,
                 ),
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(height: 20),
-                  Text(
-                    '${activity.price.toInt()}€',
-                    style: appTheme.textStyles.subtitle2,
+                const SizedBox(height: 32),
+                FilledButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Join',
+                    style: appTheme.textStyles.body2,
                   ),
-                  const SizedBox(height: 32),
-                  FilledButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Join',
-                      style: appTheme.textStyles.body2,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
