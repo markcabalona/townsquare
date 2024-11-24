@@ -9,10 +9,12 @@ class ActivitiesList extends StatelessWidget {
     super.key,
     required this.activities,
     this.onFetchMore,
+    this.isLoading = false,
   });
 
   final List<Activity> activities;
   final ValueChanged<int>? onFetchMore;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -46,20 +48,19 @@ class ActivitiesList extends StatelessWidget {
                   onFetchMore?.call(activities.length);
                 }
 
-                if (index < activities.length - 1) {
-                  return buildActivityCard(activities[index]);
+                if (isLoading && index >= activities.length - 1) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      buildActivityCard(activities[index]),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: CircularProgressIndicator(),
+                      ),
+                    ],
+                  );
                 }
-
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    buildActivityCard(activities[index]),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: CircularProgressIndicator(),
-                    ),
-                  ],
-                );
+                return buildActivityCard(activities[index]);
               },
             ),
           ),
