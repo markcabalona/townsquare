@@ -18,6 +18,7 @@ class Activity with _$Activity {
     required int maxParticipants,
     @Default([]) List<Participant> participants,
     @Default([]) List<Tags> tags,
+    @Default([]) List<String> categories,
     @Default(0) double price,
   }) = _Activity;
 
