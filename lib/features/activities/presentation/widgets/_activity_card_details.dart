@@ -37,7 +37,7 @@ class _ActivityDetails extends StatelessWidget {
       TextSpan(
         text: ' (${activity.duration.inMinutes} min)',
         style: appTheme.textStyles.body2.copyWith(
-          color: appTheme.colors.neutral.shade200,
+          color: appTheme.colors.neutral.shade500,
         ),
       ),
     ]));
@@ -48,14 +48,15 @@ class _ActivityDetails extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(
+        Icon(
           Icons.location_on_outlined,
           size: 12,
+          color: appTheme.colors.neutral.shade500,
         ),
         Text(
           activity.location.address,
           style: appTheme.textStyles.body2.copyWith(
-            color: appTheme.colors.neutral.shade200,
+            color: appTheme.colors.neutral.shade500,
           ),
         )
       ],
@@ -69,14 +70,15 @@ class _ActivityDetails extends StatelessWidget {
       spacing: 5,
       children: [
         AppChipWidget(
-          leading: const Icon(
+          leading: Icon(
             Icons.person_outline_rounded,
             size: 12,
+            color: appTheme.colors.neutral.shade500,
           ),
           label:
               '${activity.maxParticipants - activity.participants.length} spots left',
-          backgroundColor: appTheme.colors.neutral.shade500,
-          foregroundColor: appTheme.colors.neutral.shade200,
+          backgroundColor: appTheme.colors.neutral.shade200,
+          foregroundColor: appTheme.colors.neutral.shade500,
         ),
         ...activity.tags.map(
           (e) => AppChipWidget(

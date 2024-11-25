@@ -24,6 +24,7 @@ mixin _$Activity {
   int get maxParticipants => throw _privateConstructorUsedError;
   List<Participant> get participants => throw _privateConstructorUsedError;
   List<Tags> get tags => throw _privateConstructorUsedError;
+  List<String> get categories => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
 
   /// Create a copy of Activity
@@ -47,6 +48,7 @@ abstract class $ActivityCopyWith<$Res> {
       int maxParticipants,
       List<Participant> participants,
       List<Tags> tags,
+      List<String> categories,
       double price});
 
   $LocationCopyWith<$Res> get location;
@@ -75,6 +77,7 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
     Object? maxParticipants = null,
     Object? participants = null,
     Object? tags = null,
+    Object? categories = null,
     Object? price = null,
   }) {
     return _then(_value.copyWith(
@@ -110,6 +113,10 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<Tags>,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -145,6 +152,7 @@ abstract class _$$ActivityImplCopyWith<$Res>
       int maxParticipants,
       List<Participant> participants,
       List<Tags> tags,
+      List<String> categories,
       double price});
 
   @override
@@ -172,6 +180,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
     Object? maxParticipants = null,
     Object? participants = null,
     Object? tags = null,
+    Object? categories = null,
     Object? price = null,
   }) {
     return _then(_$ActivityImpl(
@@ -207,6 +216,10 @@ class __$$ActivityImplCopyWithImpl<$Res>
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<Tags>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -227,9 +240,11 @@ class _$ActivityImpl extends _Activity {
       required this.maxParticipants,
       final List<Participant> participants = const [],
       final List<Tags> tags = const [],
+      final List<String> categories = const [],
       this.price = 0})
       : _participants = participants,
         _tags = tags,
+        _categories = categories,
         super._();
 
   @override
@@ -262,13 +277,22 @@ class _$ActivityImpl extends _Activity {
     return EqualUnmodifiableListView(_tags);
   }
 
+  final List<String> _categories;
+  @override
+  @JsonKey()
+  List<String> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
   @override
   @JsonKey()
   final double price;
 
   @override
   String toString() {
-    return 'Activity(id: $id, startDate: $startDate, endDate: $endDate, name: $name, location: $location, maxParticipants: $maxParticipants, participants: $participants, tags: $tags, price: $price)';
+    return 'Activity(id: $id, startDate: $startDate, endDate: $endDate, name: $name, location: $location, maxParticipants: $maxParticipants, participants: $participants, tags: $tags, categories: $categories, price: $price)';
   }
 
   @override
@@ -288,6 +312,8 @@ class _$ActivityImpl extends _Activity {
             const DeepCollectionEquality()
                 .equals(other._participants, _participants) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
             (identical(other.price, price) || other.price == price));
   }
 
@@ -302,6 +328,7 @@ class _$ActivityImpl extends _Activity {
       maxParticipants,
       const DeepCollectionEquality().hash(_participants),
       const DeepCollectionEquality().hash(_tags),
+      const DeepCollectionEquality().hash(_categories),
       price);
 
   /// Create a copy of Activity
@@ -323,6 +350,7 @@ abstract class _Activity extends Activity {
       required final int maxParticipants,
       final List<Participant> participants,
       final List<Tags> tags,
+      final List<String> categories,
       final double price}) = _$ActivityImpl;
   _Activity._() : super._();
 
@@ -342,6 +370,8 @@ abstract class _Activity extends Activity {
   List<Participant> get participants;
   @override
   List<Tags> get tags;
+  @override
+  List<String> get categories;
   @override
   double get price;
 

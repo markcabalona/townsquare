@@ -18,6 +18,7 @@ class TownSquareApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: appTheme.colors.primary,
+              primary: appTheme.colors.primary,
             ),
             textTheme: TextTheme(
               bodyMedium: appTheme.textStyles.body1,

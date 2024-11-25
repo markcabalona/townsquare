@@ -12,42 +12,42 @@ class AppColorsLight implements AppColors {
 
   @override
   AppColorSwatch get neutral => AppColorSwatch.fromMap(const {
-        100: Color(0xff6C757D),
-        200: Color(0xffADB5BD),
-        300: Color(0xffCED4DA),
-        400: Color(0xffDEE2E6),
-        500: Color(0xffE9ECEF),
-        600: Color(0xffF8F9FA),
+        600: Color(0xff6C757D),
+        500: Color(0xffADB5BD),
+        400: Color(0xffCED4DA),
+        300: Color(0xffDEE2E6),
+        200: Color(0xffE9ECEF),
+        100: Color(0xffF8F9FA),
       });
 
   @override
   AppColorSwatch get primary => AppColorSwatch.fromMap(const {
-        100: Color(0xff35BAF8),
-        200: Color(0xff4FC7FF),
-        300: Color(0xff7FD6FF),
-        400: Color(0xffA1E1FF),
-        500: Color(0xffC1EBFF),
-        600: Color(0xffD5F1FF),
+        600: Color(0xff35BAF8),
+        500: Color(0xff4FC7FF),
+        400: Color(0xff7FD6FF),
+        300: Color(0xffA1E1FF),
+        200: Color(0xffC1EBFF),
+        100: Color(0xffD5F1FF),
       });
 
   @override
   AppColorSwatch get secondary => AppColorSwatch.fromMap(const {
-        100: Color(0xffEBCF30),
-        200: Color(0xffF6DB43),
-        300: Color(0xffFFE764),
-        400: Color(0xffFFF09C),
-        500: Color(0xffFBF2C0),
-        600: Color(0xffFFF8EB),
+        600: Color(0xffEBCF30),
+        500: Color(0xffF6DB43),
+        400: Color(0xffFFE764),
+        300: Color(0xffFFF09C),
+        200: Color(0xffFBF2C0),
+        100: Color(0xffFFF8EB),
       });
 
   @override
   AppColorSwatch get tertiary => AppColorSwatch.fromMap(const {
-        100: Color(0xff7C5D8E),
-        200: Color(0xffAC84C3),
-        300: Color(0xffBAA1C8),
+        600: Color(0xff7C5D8E),
+        500: Color(0xffAC84C3),
         400: Color(0xffBAA1C8),
-        500: Color(0xffEEE1F5),
-        600: Color(0xffFBF4FF),
+        300: Color(0xffBAA1C8),
+        200: Color(0xffEEE1F5),
+        100: Color(0xffFBF4FF),
       });
 
   @override
