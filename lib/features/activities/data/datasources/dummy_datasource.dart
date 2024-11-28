@@ -47,13 +47,13 @@ class DummyDatasource implements ActivitiesDatasource {
           ),
           element.name,
           element.location.address,
-          element.price.toString(),
+          element.price.toInt().toString(),
         ];
         return searchables.any(
           (element) {
             final searches = [...?categories, keyword].nonNulls;
             for (final search in searches) {
-              if (element.contains(search)) {
+              if (element.toLowerCase().contains(search.toLowerCase())) {
                 return true;
               }
             }
