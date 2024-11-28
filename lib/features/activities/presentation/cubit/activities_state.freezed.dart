@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ActivitiesState {
   bool get isInitialLoad => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSearching => throw _privateConstructorUsedError;
   List<Activity> get activities => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
   ActivitySearchParams get searchParams => throw _privateConstructorUsedError;
@@ -38,6 +39,7 @@ abstract class $ActivitiesStateCopyWith<$Res> {
   $Res call(
       {bool isInitialLoad,
       bool isLoading,
+      bool isSearching,
       List<Activity> activities,
       List<String> categories,
       ActivitySearchParams searchParams});
@@ -62,6 +64,7 @@ class _$ActivitiesStateCopyWithImpl<$Res, $Val extends ActivitiesState>
   $Res call({
     Object? isInitialLoad = null,
     Object? isLoading = null,
+    Object? isSearching = null,
     Object? activities = null,
     Object? categories = null,
     Object? searchParams = null,
@@ -74,6 +77,10 @@ class _$ActivitiesStateCopyWithImpl<$Res, $Val extends ActivitiesState>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSearching: null == isSearching
+          ? _value.isSearching
+          : isSearching // ignore: cast_nullable_to_non_nullable
               as bool,
       activities: null == activities
           ? _value.activities
@@ -112,6 +119,7 @@ abstract class _$$ActivitiesStateImplCopyWith<$Res>
   $Res call(
       {bool isInitialLoad,
       bool isLoading,
+      bool isSearching,
       List<Activity> activities,
       List<String> categories,
       ActivitySearchParams searchParams});
@@ -135,6 +143,7 @@ class __$$ActivitiesStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isInitialLoad = null,
     Object? isLoading = null,
+    Object? isSearching = null,
     Object? activities = null,
     Object? categories = null,
     Object? searchParams = null,
@@ -147,6 +156,10 @@ class __$$ActivitiesStateImplCopyWithImpl<$Res>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSearching: null == isSearching
+          ? _value.isSearching
+          : isSearching // ignore: cast_nullable_to_non_nullable
               as bool,
       activities: null == activities
           ? _value._activities
@@ -170,6 +183,7 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
   const _$ActivitiesStateImpl(
       {this.isInitialLoad = true,
       this.isLoading = true,
+      this.isSearching = false,
       final List<Activity> activities = const [],
       final List<String> categories = const [
         'Sports',
@@ -189,6 +203,9 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final bool isSearching;
   final List<Activity> _activities;
   @override
   @JsonKey()
@@ -213,7 +230,7 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
 
   @override
   String toString() {
-    return 'ActivitiesState(isInitialLoad: $isInitialLoad, isLoading: $isLoading, activities: $activities, categories: $categories, searchParams: $searchParams)';
+    return 'ActivitiesState(isInitialLoad: $isInitialLoad, isLoading: $isLoading, isSearching: $isSearching, activities: $activities, categories: $categories, searchParams: $searchParams)';
   }
 
   @override
@@ -225,6 +242,8 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
                 other.isInitialLoad == isInitialLoad) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.isSearching, isSearching) ||
+                other.isSearching == isSearching) &&
             const DeepCollectionEquality()
                 .equals(other._activities, _activities) &&
             const DeepCollectionEquality()
@@ -238,6 +257,7 @@ class _$ActivitiesStateImpl implements _ActivitiesState {
       runtimeType,
       isInitialLoad,
       isLoading,
+      isSearching,
       const DeepCollectionEquality().hash(_activities),
       const DeepCollectionEquality().hash(_categories),
       searchParams);
@@ -256,6 +276,7 @@ abstract class _ActivitiesState implements ActivitiesState {
   const factory _ActivitiesState(
       {final bool isInitialLoad,
       final bool isLoading,
+      final bool isSearching,
       final List<Activity> activities,
       final List<String> categories,
       final ActivitySearchParams searchParams}) = _$ActivitiesStateImpl;
@@ -264,6 +285,8 @@ abstract class _ActivitiesState implements ActivitiesState {
   bool get isInitialLoad;
   @override
   bool get isLoading;
+  @override
+  bool get isSearching;
   @override
   List<Activity> get activities;
   @override

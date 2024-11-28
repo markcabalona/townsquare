@@ -39,6 +39,11 @@ class TownSquareApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            inputDecorationTheme: InputDecorationTheme(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
           ),
           routeInformationParser: appRouter.routeInformationParser,
           routeInformationProvider: appRouter.routeInformationProvider,

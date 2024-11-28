@@ -72,7 +72,38 @@ class ActivitiesCubit extends Cubit<ActivitiesState> {
   }
 
   Future<void> searchActivities() async {
-    // TODO: Implement searching activities with current ActivitySearchParams
+    final Either<AppFailure, List<Activity>> result;
+    emit(state.copyWith(isSearching: true));
+
+    final shouldSearch = state.searchParams.categories.isNotEmpty ||
+        state.searchParams.keyword?.isNotEmpty == true;
+
+    if (shouldSearch) {
+      result = await _repository.searchActivities(
+        searchParameter: state.searchParams,
+      );
+    } else {
+      result = await _repository.fetchActivities();
+    }
+    result.fold(
+      (failure) {
+        emit(state.copyWith(
+          isLoading: false,
+          isInitialLoad: false,
+          isSearching: false,
+        ));
+      },
+      (activities) {
+        emit(
+          state.copyWith(
+            isInitialLoad: false,
+            isLoading: false,
+            isSearching: false,
+            activities: activities,
+          ),
+        );
+      },
+    );
   }
 
   Future<void> updateSearchParams({
