@@ -9,6 +9,7 @@ class ActivitiesState with _$ActivitiesState {
   const factory ActivitiesState({
     @Default(true) bool isInitialLoad,
     @Default(true) bool isLoading,
+    @Default(false) bool isSearching,
     @Default([]) List<Activity> activities,
     @Default([
       'Sports',
