@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:townsquare/core/enums/platforms.dart';
 import 'package:townsquare/core/theme/app_theme.dart';
 import 'package:townsquare/core/theme/colors/app_colors_light.dart';
 import 'package:townsquare/core/theme/text_styles/app_text_styles.dart';
@@ -16,10 +17,12 @@ class AppThemeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isDesktop = constraints.maxWidth >= 1044;
+        final platform = Platforms.fromWidth(constraints.maxWidth);
+        final isDesktop = platform == Platforms.web;
         return AppTheme(
           colors: AppColorsLight(),
           textStyles: _getTextStyle(isDesktop),
+          platform: platform,
           child: child,
         );
       },
