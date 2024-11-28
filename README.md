@@ -42,6 +42,7 @@ fvm flutter run -d {device-id}
 #### Improvements
 - With more time I would implement the join feature, and would use firebase for storage and realtime updates
 - I would also focus more on other details such as the responsiveness
+- I would also implement CI/CD using github actions
 ---
 ### Project Structure
 - This project follows Clean architecture and a feature first approach, you can visit the website below to read more about clean architecture and feature first in details
