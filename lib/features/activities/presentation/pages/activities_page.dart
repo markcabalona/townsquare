@@ -24,28 +24,37 @@ class ActivitiesPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              DateTime.now().format('EEE, MMM dd'),
-              style: appTheme.textStyles.body1
-                  .copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: appTheme.colors.neutral.shade500,
-                  )
-                  .withLineHeight(16.71),
-            ),
-            Text(
-              'This week in Estepona',
-              style: appTheme.textStyles.heading1
-                  .copyWith(fontWeight: FontWeight.w500)
-                  .withLineHeight(28),
-            ),
-            const SizedBox(height: 15),
-            SearchField(
-              debounceDuration: const Duration(milliseconds: 500),
-              onChanged: (value) {
-                bloc.updateSearchParams(keyword: value);
-                bloc.searchActivities();
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    DateTime.now().format('EEE, MMM dd'),
+                    style: appTheme.textStyles.body1
+                        .copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: appTheme.colors.neutral.shade500,
+                        )
+                        .withLineHeight(16.71),
+                  ),
+                  Text(
+                    'This week in Estepona',
+                    style: appTheme.textStyles.heading1
+                        .copyWith(fontWeight: FontWeight.w500)
+                        .withLineHeight(28),
+                  ),
+                  const SizedBox(height: 15),
+                  SearchField(
+                    debounceDuration: const Duration(milliseconds: 500),
+                    onChanged: (value) {
+                      bloc.updateSearchParams(keyword: value);
+                      bloc.searchActivities();
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: isMobile ? 18 : 26),
             CategoriesSelection(

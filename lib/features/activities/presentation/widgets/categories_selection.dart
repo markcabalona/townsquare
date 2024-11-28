@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:townsquare/core/enums/tags.dart';
@@ -51,6 +50,7 @@ class _CategoriesSelectionState extends State<CategoriesSelection> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
+              const SizedBox(width: 24),
               Padding(
                 padding: const EdgeInsets.only(right: 4.0),
                 child: AppChipWidget.icon(
