@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:townsquare/core/enums/platforms.dart';
 import 'package:townsquare/core/extensions/date_time_formatter_ext.dart';
-import 'package:townsquare/core/extensions/text_style_ext.dart';
 import 'package:townsquare/core/theme/app_theme.dart';
 import 'package:townsquare/core/widgets/app_chip_widget.dart';
 import 'package:townsquare/features/activities/domain/entities/activity.dart';
