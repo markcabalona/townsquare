@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:townsquare/core/extensions/text_style_ext.dart';
 import 'package:townsquare/core/theme/app_theme.dart';
 import 'package:townsquare/core/utils/debounce.dart';
 
@@ -41,15 +40,13 @@ class _SearchFieldState extends State<SearchField> {
     return TextField(
       controller: controller,
       textAlignVertical: TextAlignVertical.center,
-      style: appTheme.textStyles.body1.withLineHeight(16.71),
+      style: appTheme.textStyles.body1,
       decoration: InputDecoration(
         hintText: 'What do you feel like doing?',
-        hintStyle: appTheme.textStyles.body1
-            .copyWith(
-              fontWeight: FontWeight.w400,
-              color: appTheme.colors.neutral.shade500,
-            )
-            .withLineHeight(16.71),
+        hintStyle: appTheme.textStyles.body1.copyWith(
+          fontWeight: FontWeight.w400,
+          color: appTheme.colors.neutral.shade500,
+        ),
         suffixIcon: const Icon(
           Icons.search_rounded,
         ),

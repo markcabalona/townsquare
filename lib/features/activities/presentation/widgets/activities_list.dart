@@ -42,7 +42,7 @@ class ActivitiesList extends StatelessWidget {
             child: ListView.separated(
               itemCount: activities.length,
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              separatorBuilder: (context, index) => const SizedBox(height: 16),
+              separatorBuilder: (context, index) => const SizedBox(height: 14),
               itemBuilder: (context, index) {
                 if (index >= activities.length - 3) {
                   onFetchMore?.call(activities.length);

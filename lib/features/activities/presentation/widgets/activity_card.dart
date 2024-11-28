@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:townsquare/core/enums/platforms.dart';
 import 'package:townsquare/core/extensions/date_time_formatter_ext.dart';
+import 'package:townsquare/core/extensions/text_style_ext.dart';
 import 'package:townsquare/core/theme/app_theme.dart';
 import 'package:townsquare/core/widgets/app_chip_widget.dart';
 import 'package:townsquare/features/activities/domain/entities/activity.dart';
@@ -18,10 +20,7 @@ class ActivityCard extends StatelessWidget {
     final appTheme = AppTheme.of(context);
     return Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 12.0,
-          horizontal: 32,
-        ),
+        padding: _getPadding(context),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -53,6 +52,18 @@ class ActivityCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  EdgeInsets _getPadding(BuildContext context) {
+    final platform = AppTheme.of(context).platform;
+    final paddings = switch (platform) {
+      Platforms.mobile => (vertical: 8.0, horizontal: 16.0),
+      (_) => (vertical: 12.0, horizontal: 32.0),
+    };
+    return EdgeInsets.symmetric(
+      vertical: paddings.vertical,
+      horizontal: paddings.horizontal,
     );
   }
 }

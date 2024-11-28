@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:townsquare/core/enums/platforms.dart';
 import 'package:townsquare/core/extensions/date_time_formatter_ext.dart';
 import 'package:townsquare/core/extensions/text_style_ext.dart';
 import 'package:townsquare/core/theme/app_theme.dart';
@@ -16,6 +17,7 @@ class ActivitiesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ActivitiesCubit>(context);
     final appTheme = AppTheme.of(context);
+    final isMobile = appTheme.platform == Platforms.mobile;
     return Scaffold(
       body: SizedBox(
         width: 595,
@@ -45,19 +47,20 @@ class ActivitiesPage extends StatelessWidget {
                 bloc.searchActivities();
               },
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 33.0),
-              child: CategoriesSelection(
-                debounceDuration: const Duration(milliseconds: 500),
-                onChanged: (value) {
-                  bloc.updateSearchParams(categories: value);
-                  bloc.searchActivities();
-                },
-              ),
+            SizedBox(height: isMobile ? 18 : 26),
+            CategoriesSelection(
+              debounceDuration: const Duration(milliseconds: 500),
+              onChanged: (value) {
+                bloc.updateSearchParams(categories: value);
+                bloc.searchActivities();
+              },
             ),
+            SizedBox(height: isMobile ? 24 : 26),
             Flexible(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 26.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: isMobile ? 20 : 26.0,
+                ),
                 child: BlocBuilder<ActivitiesCubit, ActivitiesState>(
                   builder: (context, state) {
                     if (state.isInitialLoad) {
